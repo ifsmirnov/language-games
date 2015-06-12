@@ -1,4 +1,6 @@
 from alphabet import *
+from utils import *
+
 
 def ngram_frequency(word_list, n):
     """Return n-dim array where a[c1]...[cn] = number of c1..cn ngram occurrences"""

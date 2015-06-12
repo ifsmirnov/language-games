@@ -14,6 +14,10 @@ from utils import *
 
 FILENAME = "Garrison_Vsya-Stalnaya-Krysa-Tom-1.371445.fb2"
 
+generate_all(FILENAME, "mydict")
+
+exit(0)
+
 big = load_ngrams("raw_3_rev.ngram")
 small = load_ngrams("raw_2_rev.ngram")
 tokens = extract_typed_tokens(open("input.txt").readline().strip())
