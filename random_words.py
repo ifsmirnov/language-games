@@ -89,10 +89,14 @@ def similar_phrase(tokens, ngram, prev_ngram, allowed):
     res = ""
     for is_rus, token in tokens:
         if is_rus:
+            # We have to generate random word even if we don't need it
+            # to support random consistensy between calls
+            # even if allowed() function differs
+            rand = random_similar_word(token, ngram, prev_ngram)
             if allowed(token):
                 res += token
             else:
-                res += random_similar_word(token, ngram, prev_ngram)
+                res += rand
         else:
             res += token
     return res
