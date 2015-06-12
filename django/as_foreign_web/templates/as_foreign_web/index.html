@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Почувствуй себя иностранцем</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/slider.css" %}" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="{% static "js/main.js" %}"></script>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class=row>
+        <div class=col-md-3></div>
+        <div class=col-md-6>
+          <div style="text-align:center">
+            <h1>Почувствуй себя иностранцем</h1>
+            <p style="text-align:justify">
+              &nbsp;Представьте себе ситуацию: вы учите новый иностранный язык, выучили уже пятьсот или тысячу слов и решили почитать газету.
+              Конечно, понятна будет от силы половина, но смысл уловить должно быть можно.<br />
+              &nbsp;А вот как выглядят русские тексты, если большая часть слов читателю неизвестна.<br />
+              <!--&nbsp;Здесь можно попробовать! В поле введите любой текст на русском языке,
+              а ползунком выберите сложность. От сложности зависит, сколько именно русских слов
+              знает условный &laquo;испытуемый&raquo;.-->
+            </p>
+            <br />
+          </div>
+        </div>
+        <div class=col-md-3></div>
+      </div>
+    </div>
+
+    <div class=container>
+      <br/>
+      <div class=row>
+        <div class=col-md-6>
+          <textarea rows=7 class=form-control id=input_text>
+  Представьте себе ситуацию: вы учите новый иностранный язык, выучили уже пятьсот или тысячу слов и решили почитать газету. Конечно, понятна будет от силы половина, но смысл уловить должно быть можно.
+  А как выглядят русские тексты, если большая часть слов читателю неизвестна?</textarea>
+          <br />
+          <div style="text-align:center">
+            <!--<div class=row>
+              <div class=col-md-4 style="text-align:left">проще</div>
+              <div class=col-md-4 style="text-align:center"><span class=lead>сложность</span></div>
+              <div class=col-md-4 style="text-align:right">сложнее</div>
+              <br>
+            </div>
+            -->
+            <span class=lead>сложность</span><br>
+            <input type="text" id="top_k_slider" class="span2"
+              data-slider-selection="none" data-slider-tooltip="show"
+              style="width:200%"
+            >
+          </div>
+        </div>
+        <div class=col-md-6>
+          <p id=result></p>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/bootstrap-slider.js" %}"></script>
+  </body>
+</html>
