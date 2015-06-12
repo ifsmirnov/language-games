@@ -73,7 +73,7 @@ def generate_all(path_to_book, path_to_dict):
         print "OK %d words," % n,; timestamp = log_time()
 
         print "Generating 2-grams...",; flush()
-        generate_ngrams(path_to_dict + "raw_rev.data", path_to_dict + "raw__rev_2.ngram", 2)
+        generate_ngrams(path_to_dict + "raw_rev.data", path_to_dict + "raw_rev_2.ngram", 2)
         print "OK",; timestamp = log_time()
 
         print "Generating 3-grams...",; flush()

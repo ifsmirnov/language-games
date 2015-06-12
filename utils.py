@@ -1,7 +1,15 @@
 import pprint
 from random import randint
+from pymorphy2 import MorphAnalyzer
 
 from alphabet import *
+
+
+def word_is_frequent(word, k, freq, morph=MorphAnalyzer()):
+    """Check if normalized word is in top-k in freq"""
+
+    word = morph.parse(word)[0].normal_form
+    return word in freq and freq[word] < k
 
 
 def create_nd_array(dims, default=None):

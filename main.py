@@ -14,18 +14,15 @@ from utils import *
 
 FILENAME = "Garrison_Vsya-Stalnaya-Krysa-Tom-1.371445.fb2"
 
-generate_all(FILENAME, "mydict")
+data = load_all("mydict")
+if not data:
+    exit(1)
 
-exit(0)
-
-big = load_ngrams("raw_3_rev.ngram")
-small = load_ngrams("raw_2_rev.ngram")
 tokens = extract_typed_tokens(open("input.txt").readline().strip())
 
-morph = MorphAnalyzer()
-
-def word_is_frequent(x, k, freq=load_frequency_list("norm.freq")):
-    x = morph.parse(x)[0].normal_form
-    return x in freq and freq[x] < k
-
-print similar_phrase(tokens, big, small, lambda w: word_is_frequent(w, 500))
+print similar_phrase(
+        tokens,
+        data["ngram_big"],
+        data["ngram_small"],
+        lambda w: word_is_frequent(w, 500, data["freq"])
+)
